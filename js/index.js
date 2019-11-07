@@ -1,67 +1,89 @@
+//write to document function
 
-// Write a function called squareNumber that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9."
+function writeOutputToDocument(result){
+  document.getElementById(`output`).innerHTML+= `<li>${result}</li>`;
+}
 
-function writeOutputToDocument( result1) {
-    document.getElementById(`output1`).innerHTML += `<li>${result1}</li>`;
-  }
+
+
+//SquareNumber solution
+function SquareNumber(numnToSqaure){
+  return numnToSqaure**2;
+  //console.log(`the result of the squaring the number ${var1} is ${squareNumber}`);
+}
+
+//SquareNumber testing
+let numnToSqaure=3;
+
+//SquareNumber output
+writeOutputToDocument(`the result of the squaring the number ${numnToSqaure} is ` +SquareNumber(numnToSqaure));
+
+
+
+
+//halfNumber solution
+function halfNumber(numberToHalf){
+  return numberToHalf/2;
+  //console.log(`half of ${number} is ${result}`);
   
-  function squareNumber(numToSquare){
-    return numToSquare **2;
-    
-  }
-  
-  let numToSquare = 3;
-  
-  writeOutputToDocument(`the result of squaring the number ${numToSquare} is ${squareNumber(numToSquare)}.`)
-  
-  
-  
-  
-  // Write a function called halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
-  
-  function writeOutput( result2 ) {
-    document.getElementById(`output2`).innerHTML += `<li>${result2}</li>`;
-  }
-  
-  function halfNumber(_numToHalf){
-    return _numToHalf /2;
-    
-  }
-  
-  let _numToHalf = 5;
-  
-  writeOutput(`the result of half the number ${_numToHalf} is ${halfNumber(_numToHalf)}.`)
-  
-  
-  
-  
-  
-  // Write a function called percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
-  
-  
-  
-  
-  // Write a function called areaOfCircle that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
-  //      Bonus: Round the result so there are only two digits after the decimal.
-  
-  function writeOutputToDocument( result ) {
-    document.getElementById(`output`).innerHTML += `<li>${result}</li>`;
-  }
-  
-  function areaOfCircle(){
-    return  
-    
-  }
-  
-  let  = ;
-  
-  writeOutputToDocument(`the result of squaring the number ${} is ${areaOfCircle()}.`)
-  
-  
-  
-  
-  // Write a function that will take one argument (a number) and perform the following operations, using the functions you wrote earlier
-  //      1. Take half of the number and store the result.
-  //      2. Square the result of #1 and store that result. 
-  //      3. Calculate the area of a circle with the result of #2 as the radius.   
-  //      4. Calculate what percentage that area is of the squared result (#3).
+}
+
+//halfNumber testing
+let numberToHalf=6;
+
+//halfNumber output
+writeOutputToDocument(`half of ${numberToHalf} is `+ halfNumber(numberToHalf));
+
+//******************** */
+
+//percentOf solution
+function percentOf(num1,num2){
+  return (num1/num2)*100;
+}
+
+//percentOf testing
+let num1=2;
+let num2=4;
+
+//percentOf output
+writeOutputToDocument(`${num1} is ${percentOf(num1,num2)}% of ${num2}`);
+
+//*****************
+
+
+
+//areaOfCircle solution
+
+///solution
+function areaOfCircle(radius){
+  area=3.14*radius*radius;
+  return area.toFixed(2);
+}
+
+//test
+let radius=4;
+
+//output
+writeOutputToDocument(`the areaof the circle is ${areaOfCircle(radius)}`);
+
+
+
+//function 
+
+function allOfThem(num){
+   let half= halfNumber(num);
+   let sqaure = SquareNumber(half);
+   let area=areaOfCircle(sqaure);
+   let percentage= percentOf(sqaure,area);
+
+   return percentage;
+   
+
+}
+
+
+//test
+let num=2;
+
+//output
+writeOutputToDocument(`${allOfThem(num)}`);
